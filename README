@@ -1,1 +1,18 @@
-dwm
+// make sure to install xorg-xinit, NetworkManager, pulseaudio, pulseaudio-alsa, and pamixer
+
+cp /etc/X11/xinit/xinitrc ~/.xinitrc
+open ~/.xinitrc replace the default "exec xterm -geometry 80x66+0+0 -namelogin" with "exec dwm"
+
+cp /etc/X11/xinit/xserverrc ~/.xserverrc
+open it and replace the default "exec /usr/bin/X -nolisten tcp "$@"" with "exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR"
+
+// add the following to ~/.base_profile
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
+
+git clone "https://github.com/discordantduck/dwm"
+
+// in "config.h", search for "alacritty" and replace it with your preferred terminal emulator
+
+sudo make clean install
