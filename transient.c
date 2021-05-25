@@ -5,8 +5,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-int main(void)
-{
+int main(void) {
 	Display *d;
 	Window r, f, t = None;
 	XSizeHints h;
@@ -25,12 +24,10 @@ int main(void)
 	XMapWindow(d, f);
 
 	XSelectInput(d, f, ExposureMask);
-	while (1)
-	{
+	while (1) {
 		XNextEvent(d, &e);
 
-		if (t == None)
-		{
+		if (t == None) {
 			sleep(5);
 			t = XCreateSimpleWindow(d, r, 50, 50, 100, 100, 0, 0, 0);
 			XSetTransientForHint(d, t, f);
