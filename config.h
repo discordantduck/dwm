@@ -37,12 +37,12 @@ static const Rule rules[] =
      *  WM_CLASS(STRING) = instance, class
      *  WM_NAME(STRING) = title
     */
-/*  CLASS           INSTANCE	TITLE	TAGS MASK	FLOATING	MONITOR */
-    {"Alacritty",   NULL,		NULL,	0,			0,			-1},
-    {"Code",        NULL,		NULL,	0,			0,			-1},
-    {"Firefox",     NULL,		NULL,	0,			0,			-1},
-    {"Gimp",        NULL,		NULL,	0,			1,			-1},
-    {"Keepassxc",   NULL,		NULL,	0,			0,			-1},
+/*  CLASS           INSTANCE    TITLE   TAGS MASK   FLOATING    MONITOR */
+    {"Alacritty",   NULL,       NULL,   0,          0,          -1},
+    {"Code",        NULL,       NULL,   0,          0,          -1},
+    {"Firefox",     NULL,       NULL,   0,          0,          -1},
+    {"Gimp",        NULL,       NULL,   0,          1,          -1},
+    {"Keepassxc",   NULL,       NULL,   0,          0,          -1},
     {"OBS",         NULL,       NULL,   0,          0,          -1},
 };
 
@@ -57,12 +57,11 @@ static const int resizehints = 1;
 static const Layout layouts[] =
 {
 /*  symbol arrange function */
-
     /* first entry is default */
-    {"[T]",	tile},
+    {"[T]", tile},
     /* no layout function means floating behavior */
     {"[F]", NULL},
-    {"[M]",	monocle},
+    {"[M]", monocle},
 };
 
 /* KEY DEFINITIONS --------------------------------------------------------- */
