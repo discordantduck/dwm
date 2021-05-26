@@ -1,7 +1,5 @@
-config.def.h
 drw.o
 dwm
 dwm.o
-.gitignore
 patches
 util.o
