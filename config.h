@@ -125,17 +125,26 @@ static Key keys[] =
     {0,                 XK_F11,     spawn,          SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)")},
     {0,                 XK_F12,     spawn,          SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)")},
 
-    //{MODKEY,          XK_F10,     spawn,          SHCMD("pamixer --default-source -t; kill -44 $(pidof dwmblocks")},
-    {MODKEY,            XK_F11,     spawn,          SHCMD("pamixer --default-source -d 5; kill -44 $(pidof dwmblocks)")},
-    {MODKEY,            XK_F12,     spawn,          SHCMD("pamixer --default-source -i 5; kill -44 $(pidof dwmblocks)")},
+    {MODKEY,            XK_F10,     spawn,          SHCMD("pamixer --default-source -t; kill -45 $(pidof dwmblocks)")},
+    {MODKEY,            XK_F11,     spawn,          SHCMD("pamixer --default-source -d 5; kill -45 $(pidof dwmblocks)")},
+    {MODKEY,            XK_F12,     spawn,          SHCMD("pamixer --default-source -i 5; kill -45 $(pidof dwmblocks)")},
+
+    /* volume control with media keys */
+    //{0,                 XF86XK_AudioMute,            spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)")},
+    //{0,                 XF86XK_AudioLowerVolume,     spawn,          SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)")},
+    //{0,                 XF86XK_AudioRaiseVolume,     spawn,          SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)")},
+
+    //{MODKEY,            XF86XK_AudioMute,             spawn,         SHCMD("pamixer --default-source -t; kill -45 $(pidof dwmblocks)")},
+    //{MODKEY,            XF86XK_AudioLowerVolume,     spawn,          SHCMD("pamixer --default-source -d 5; kill -45 $(pidof dwmblocks)")},
+    //{MODKEY,            XF86XK_AudioRaiseVolume,     spawn,          SHCMD("pamixer --default-source -i 5; kill -45 $(pidof dwmblocks)")},
 
     //{0,                   XK_F10,     spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; kill -44 $(pidof dwmblocks)")},
     //{0,                   XK_F11,     spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%; kill -44 $(pidof dwmblocks)")},
     //{0,                   XK_F12,     spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -44 $(pidof dwmblocks)")},
 
-    {MODKEY,            XK_F10,     spawn,          SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle; kill -44 $(pidof dwmblocks)")},
-    //{MODKEY,          XK_F11,     spawn,          SHCMD("pactl set-source-volume @DEFAULT_SOURCE@ -5%; kill -44 $(pidof dwmblocks")},
-    //{MODKEY,          XK_F12,     spawn,          SHCMD("pactl set-source-volume @DEFAULT_SOURCE@ +5%; kill -44 $(pidof dwmblocks")},
+    //{MODKEY,          XK_F10,     spawn,          SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle; kill -45 $(pidof dwmblocks)")},
+    //{MODKEY,          XK_F11,     spawn,          SHCMD("pactl set-source-volume @DEFAULT_SOURCE@ -5%; kill -45 $(pidof dwmblocks")},
+    //{MODKEY,          XK_F12,     spawn,          SHCMD("pactl set-source-volume @DEFAULT_SOURCE@ +5%; kill -45 $(pidof dwmblocks")},
 
     /* volume control with media keys */
     //{0,               XF86XK_AudioMute,           spawn,      SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)")},
