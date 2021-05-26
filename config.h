@@ -40,9 +40,8 @@ static const Rule rules[] =
 /*	CLASS			INSTANCE	TITLE	TAGS MASK	FLOATING	MONITOR */
 	{"Alacritty",	NULL,		NULL,	0,			0,			-1},
 	{"Code",		NULL,		NULL,	0,			0,			-1},
-	{"Discord",		NULL,		NULL,	0,			0,			-1},
 	{"Firefox",		NULL,		NULL,	0,			0,			-1},
-	{"Gimp",		NULL,		NULL,	0,			0,			-1},
+	{"Gimp",		NULL,		NULL,	0,			1,			-1},
 	{"Keepassxc",	NULL,		NULL,	0,			0,			-1},
 	{"OBS",			NULL,		NULL,	0,			0,			-1},
 	//{NULL,		NULL,		"Event Tester",	0,	0,		0,		-1},
@@ -50,7 +49,7 @@ static const Rule rules[] =
 
 /* LAYOUT ------------------------------------------------------------------ */
 
-static const float mfact = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact = 0.50; /* factor of master area size [0.05..0.95] */
 /* number of clients in master area */
 static const int nmaster = 1;
 /* 1 means respect size hints in tiled resizals */
