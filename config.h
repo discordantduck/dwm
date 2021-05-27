@@ -1,5 +1,3 @@
-//#include <X11/XF86keysym.h> // media keys
-
 /* APPEARANCE -------------------------------------------------------------- */
 
 static const unsigned int borderpx = 1; /* border pixel of windows */
@@ -87,7 +85,6 @@ static Key keys[] =
 {
 /*  MODIFIER            KEY         FUNCTION        ARGUMENT */
     {MODKEY,            XK_space,   spawn,          {.v = dmenucmd}},
-    {MODKEY|ShiftMask,  XK_w,       spawn,          {.v = termcmd}},
     {MODKEY,            XK_b,       togglebar,      {0}},
     {MODKEY,            XK_j,       focusstack,     {.i = +1}},
     {MODKEY,            XK_k,       focusstack,     {.i = -1}},
@@ -121,13 +118,13 @@ static Key keys[] =
     {MODKEY|ShiftMask,  XK_q,       quit,           {0}},
 
     /* volume control */
-    {0,                 XK_F10,     spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)")},
-    {0,                 XK_F11,     spawn,          SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)")},
-    {0,                 XK_F12,     spawn,          SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)")},
+    //{0,                 XK_F10,     spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)")},
+    //{0,                 XK_F11,     spawn,          SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)")},
+    //{0,                 XK_F12,     spawn,          SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)")},
 
-    {MODKEY,            XK_F10,     spawn,          SHCMD("pamixer --default-source -t; kill -45 $(pidof dwmblocks)")},
-    {MODKEY,            XK_F11,     spawn,          SHCMD("pamixer --default-source -d 5; kill -45 $(pidof dwmblocks)")},
-    {MODKEY,            XK_F12,     spawn,          SHCMD("pamixer --default-source -i 5; kill -45 $(pidof dwmblocks)")},
+    //{MODKEY,            XK_F10,     spawn,          SHCMD("pamixer --default-source -t; kill -45 $(pidof dwmblocks)")},
+    //{MODKEY,            XK_F11,     spawn,          SHCMD("pamixer --default-source -d 5; kill -45 $(pidof dwmblocks)")},
+    //{MODKEY,            XK_F12,     spawn,          SHCMD("pamixer --default-source -i 5; kill -45 $(pidof dwmblocks)")},
 
     /* volume control with media keys */
     //{0,                 XF86XK_AudioMute,            spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)")},
