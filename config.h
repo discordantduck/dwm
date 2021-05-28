@@ -1,13 +1,13 @@
 /* APPEARANCE -------------------------------------------------------------- */
 
-static const unsigned int borderpx = 1; /* border pixel of windows */
+static const unsigned int borderpx = 0; /* border pixel of windows */
 static const unsigned int snap = 32; /* snap pixel */
 static const int showbar = 1; /* 0 means no bar */
 static const int topbar = 1; /* 0 means bottom bar */
-//static const char *fonts[] = {"B&H LucidaTypewriter:size=12"};
-static const char *fonts[] = {"B&H LucidaTypewriter:style=Sans:size=12"};
-//static const char dmenufont[] = "B&H LucidaTypewriter:size=12";
-static const char dmenufont[] = {"B&H LucidaTypewriter:style=Sans:size=12"};
+static const char *fonts[] = {"B&H LucidaTypewriter:size=12"};
+//static const char *fonts[] = {"monospace:size=14"};
+static const char dmenufont[] = "B&H LucidaTypewriter:size=12";
+//static const char dmenufont[] = {"monospace:size=14"};
 
 static const char col_1[] = "#ffffff"; // white
 static const char col_2[] = "#000000"; // black
@@ -27,7 +27,7 @@ static const int statmonval = 0;
 
 /* TAGGING ----------------------------------------------------------------- */
 
-static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+static const char *tags[] = {"", "", "", "4", "5", "6", "7", "8", ""};
 
 static const Rule rules[] =
 {
@@ -39,7 +39,7 @@ static const Rule rules[] =
     {"Alacritty",   NULL,       NULL,   0,          0,          -1},
     {"Code",        NULL,       NULL,   0,          0,          -1},
     {"Firefox",     NULL,       NULL,   0,          0,          -1},
-    {"Gimp",        NULL,       NULL,   0,          1,          -1},
+    {"Gimp",        NULL,       NULL,   0,          0,          -1},
     {"Keepassxc",   NULL,       NULL,   0,          0,          -1},
     {"OBS",         NULL,       NULL,   0,          0,          -1},
 };
@@ -56,10 +56,10 @@ static const Layout layouts[] =
 {
 /*  symbol arrange function */
     /* first entry is default */
-    {"[T]", tile},
+    {"[]", tile},
     /* no layout function means floating behavior */
-    {"[F]", NULL},
-    {"[M]", monocle},
+    {"[]", NULL},
+    {"[]", monocle},
 };
 
 /* KEY DEFINITIONS --------------------------------------------------------- */
@@ -116,41 +116,6 @@ static Key keys[] =
     TAGKEYS(            XK_8,       7)
     TAGKEYS(            XK_9,       8)
     {MODKEY|ShiftMask,  XK_q,       quit,           {0}},
-
-    /* volume control */
-    //{0,                 XK_F10,     spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)")},
-    //{0,                 XK_F11,     spawn,          SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)")},
-    //{0,                 XK_F12,     spawn,          SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)")},
-
-    //{MODKEY,            XK_F10,     spawn,          SHCMD("pamixer --default-source -t; kill -45 $(pidof dwmblocks)")},
-    //{MODKEY,            XK_F11,     spawn,          SHCMD("pamixer --default-source -d 5; kill -45 $(pidof dwmblocks)")},
-    //{MODKEY,            XK_F12,     spawn,          SHCMD("pamixer --default-source -i 5; kill -45 $(pidof dwmblocks)")},
-
-    /* volume control with media keys */
-    //{0,                 XF86XK_AudioMute,            spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)")},
-    //{0,                 XF86XK_AudioLowerVolume,     spawn,          SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)")},
-    //{0,                 XF86XK_AudioRaiseVolume,     spawn,          SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)")},
-
-    //{MODKEY,            XF86XK_AudioMute,             spawn,         SHCMD("pamixer --default-source -t; kill -45 $(pidof dwmblocks)")},
-    //{MODKEY,            XF86XK_AudioLowerVolume,     spawn,          SHCMD("pamixer --default-source -d 5; kill -45 $(pidof dwmblocks)")},
-    //{MODKEY,            XF86XK_AudioRaiseVolume,     spawn,          SHCMD("pamixer --default-source -i 5; kill -45 $(pidof dwmblocks)")},
-
-    //{0,                   XK_F10,     spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; kill -44 $(pidof dwmblocks)")},
-    //{0,                   XK_F11,     spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%; kill -44 $(pidof dwmblocks)")},
-    //{0,                   XK_F12,     spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; kill -44 $(pidof dwmblocks)")},
-
-    //{MODKEY,          XK_F10,     spawn,          SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle; kill -45 $(pidof dwmblocks)")},
-    //{MODKEY,          XK_F11,     spawn,          SHCMD("pactl set-source-volume @DEFAULT_SOURCE@ -5%; kill -45 $(pidof dwmblocks")},
-    //{MODKEY,          XK_F12,     spawn,          SHCMD("pactl set-source-volume @DEFAULT_SOURCE@ +5%; kill -45 $(pidof dwmblocks")},
-
-    /* volume control with media keys */
-    //{0,               XF86XK_AudioMute,           spawn,      SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)")},
-    //{0,               XF86XK_AudioLowerVolume,    spawn,      SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)")},
-    //{0,               XF86XK_AudioRaiseVolume,    spawn,      SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)")},
-
-    //{MODKEY,          XF86XK_AudioMute,               spawn,          SHCMD("pamixer --default-source -t; kill -44 $(pidof dwmblocks")},
-    //{MODKEY,          XF86XK_AudioLowerVolume,        spawn,          SHCMD("pamixer --default-source -d 5; kill -44 $(pidof dwmblocks)")},
-    //{MODKEY,          XF86XK_AudioRaiseVolume,        spawn,          SHCMD("pamixer --default-source -i 5; kill -44 $(pidof dwmblocks)")},
 };
 
 /* BUTTON DEFINITIONS ------------------------------------------------------ */
