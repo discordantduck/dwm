@@ -1,13 +1,10 @@
-/* APPEARANCE -------------------------------------------------------------- */
-
+/* APPEARANCE */
 static const unsigned int borderpx = 0; /* border pixel of windows */
 static const unsigned int snap = 32; /* snap pixel */
 static const int showbar = 1; /* 0 means no bar */
 static const int topbar = 1; /* 0 means bottom bar */
-static const char *fonts[] = {"B&H LucidaTypewriter:size=12"};
-//static const char *fonts[] = {"monospace:size=14"};
-static const char dmenufont[] = "B&H LucidaTypewriter:size=12";
-//static const char dmenufont[] = {"monospace:size=14"};
+static const char *fonts[] = {"Source Code Pro:style=ExtraLight:size=13"};
+static const char dmenufont[] = {"Source Code Pro:size=14"};
 
 static const char col_1[] = "#ffffff"; // white
 static const char col_2[] = "#000000"; // black
@@ -22,12 +19,11 @@ static const char *colors[][3] =
     [SchemeSel]  = {col_4,  col_5,  col_6},
 };
 
-/* STATIC STATUS ----------------------------------------------------------- */
+/* STATIC STATUS */
 static const int statmonval = 0;
 
-/* TAGGING ----------------------------------------------------------------- */
-
-static const char *tags[] = {"", "", "", "4", "5", "6", "7", "8", ""};
+/* TAGGING */
+static const char *tags[] = {"", "", "", "", "", "", "", "", ""};
 
 static const Rule rules[] =
 {
@@ -38,14 +34,15 @@ static const Rule rules[] =
 /*  CLASS           INSTANCE    TITLE   TAGS MASK   FLOATING    MONITOR */
     {"Alacritty",   NULL,       NULL,   0,          0,          -1},
     {"Code",        NULL,       NULL,   0,          0,          -1},
+    {"Discord",     NULL,       NULL,   0,          0,          -1},
     {"Firefox",     NULL,       NULL,   0,          0,          -1},
     {"Gimp",        NULL,       NULL,   0,          0,          -1},
+    {"Kdenlive",    NULL,       NULL,   0,          0,          -1},
     {"Keepassxc",   NULL,       NULL,   0,          0,          -1},
     {"OBS",         NULL,       NULL,   0,          0,          -1},
 };
 
-/* LAYOUT ------------------------------------------------------------------ */
-
+/* LAYOUT */
 static const float mfact = 0.50; /* factor of master area size [0.05..0.95] */
 /* number of clients in master area */
 static const int nmaster = 1;
@@ -62,8 +59,7 @@ static const Layout layouts[] =
     {"[]", monocle},
 };
 
-/* KEY DEFINITIONS --------------------------------------------------------- */
-
+/* KEY DEFINITIONS */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
     {MODKEY,                        KEY,    view,       {.ui = 1 << TAG}}, \
@@ -74,8 +70,7 @@ static const Layout layouts[] =
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd){.v = (const char*[]){"/bin/sh", "-c", cmd, NULL}}
 
-/* COMMANDS ---------------------------------------------------------------- */
-
+/* COMMANDS */
 /* component of dmenucmd, manipulated in spawn() */
 static char dmenumon[2] = "0";
 static const char *dmenucmd[] = {"dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_1, "-nf", col_3, "-sb", col_6, "-sf", col_4, NULL};
@@ -118,8 +113,7 @@ static Key keys[] =
     {MODKEY|ShiftMask,  XK_q,       quit,           {0}},
 };
 
-/* BUTTON DEFINITIONS ------------------------------------------------------ */
-
+/* BUTTON DEFINITIONS */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] =
 {
