@@ -23,7 +23,7 @@ static const char *colors[][3] =
 static const int statmonval = 0;
 
 /* TAGGING */
-static const char *tags[] = {"", "", "", "", "", "", "", "", ""};
+static const char *tags[] = {"", "", "", "", "", "", "", "", ""};
 
 static const Rule rules[] =
 {
